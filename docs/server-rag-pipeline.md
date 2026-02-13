@@ -1,5 +1,7 @@
 # Server RAG Pipeline
 
+![Alt text](https://images.viblo.asia/192431fe-1874-4814-a04a-74edb0ca7d7d.png)
+
 This document explains the Retrieval-Augmented Generation (RAG) pipeline implemented in the `server/` directory.
 
 ## Overview
