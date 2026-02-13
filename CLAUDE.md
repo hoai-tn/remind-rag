@@ -20,11 +20,18 @@ cd client && npm run dev          # Start Vite dev server (proxies /api → loca
 cd client && npx tsc --noEmit     # Type-check
 ```
 
-### Database Setup
+### Docker
+```bash
+docker compose up                 # Start all services (db, server, client)
+```
+Database: pgvector/pgvector:pg17. Server and client containers mount source for hot reload.
+
+### Database Setup (local, without Docker)
 ```bash
 createdb remind_rag
 psql -d remind_rag -f server/src/db/schema.sql
 ```
+Schema: `documents` → `chunks` (cascade delete). Chunks have `vector(768)` column with HNSW index (`vector_cosine_ops`).
 
 ## Architecture
 
