@@ -29,17 +29,17 @@ export async function generateAnswer(
     )
     .join("\n\n");
 
-  const prompt = `You are a helpful assistant that answers questions based on the provided context.
-Use ONLY the information from the context below to answer the question.
-If the context doesn't contain enough information to answer, say so clearly.
+  const prompt = `
+    You are a helpful assistant that answers questions based on the provided context.
+    Use ONLY the information from the context below to answer the question.
+    If the context doesn't contain enough information to answer, say so clearly.
 
-Context:
-${context}
+    Context:
+    ${context}
 
-Question: ${question}
+    Question: ${question}
 
-Answer:`;
-
+    Answer:`;
 
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash-lite",
